@@ -130,7 +130,7 @@ the committed experiment reports. Full training is intentionally not a CI job.
 ## Attribution
 
 Built by [Sanusi Abdulfatai Oyewunmi](https://www.sanusiabdulfatai.com), a geospatial
-software engineer, with coding-agent assistance. This is a new, reproducible portfolio
+software engineer. This is a new, reproducible portfolio
 experiment; the code, tests and reports are available for inspection.
 
 EuroSAT: Patrick Helber, Benjamin Bischke, Andreas Dengel and Damian Borth.
