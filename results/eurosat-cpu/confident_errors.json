@@ -1,0 +1,146 @@
+[
+  {
+    "path": "AnnualCrop/AnnualCrop_1993.jpg",
+    "actual": "AnnualCrop",
+    "predicted": "Highway",
+    "confidence": 0.9999468326568604
+  },
+  {
+    "path": "PermanentCrop/PermanentCrop_1902.jpg",
+    "actual": "PermanentCrop",
+    "predicted": "River",
+    "confidence": 0.9994737505912781
+  },
+  {
+    "path": "Pasture/Pasture_889.jpg",
+    "actual": "Pasture",
+    "predicted": "Forest",
+    "confidence": 0.99791020154953
+  },
+  {
+    "path": "Pasture/Pasture_577.jpg",
+    "actual": "Pasture",
+    "predicted": "HerbaceousVegetation",
+    "confidence": 0.9968781471252441
+  },
+  {
+    "path": "River/River_2325.jpg",
+    "actual": "River",
+    "predicted": "Highway",
+    "confidence": 0.9962447285652161
+  },
+  {
+    "path": "AnnualCrop/AnnualCrop_2783.jpg",
+    "actual": "AnnualCrop",
+    "predicted": "Highway",
+    "confidence": 0.9945736527442932
+  },
+  {
+    "path": "River/River_2050.jpg",
+    "actual": "River",
+    "predicted": "Forest",
+    "confidence": 0.9923191666603088
+  },
+  {
+    "path": "Residential/Residential_2075.jpg",
+    "actual": "Residential",
+    "predicted": "Industrial",
+    "confidence": 0.9906582832336426
+  },
+  {
+    "path": "PermanentCrop/PermanentCrop_1723.jpg",
+    "actual": "PermanentCrop",
+    "predicted": "AnnualCrop",
+    "confidence": 0.9902917742729187
+  },
+  {
+    "path": "Highway/Highway_373.jpg",
+    "actual": "Highway",
+    "predicted": "Residential",
+    "confidence": 0.9852187037467957
+  },
+  {
+    "path": "Highway/Highway_210.jpg",
+    "actual": "Highway",
+    "predicted": "HerbaceousVegetation",
+    "confidence": 0.9802874326705933
+  },
+  {
+    "path": "Highway/Highway_1358.jpg",
+    "actual": "Highway",
+    "predicted": "Residential",
+    "confidence": 0.9796556234359741
+  },
+  {
+    "path": "HerbaceousVegetation/HerbaceousVegetation_2130.jpg",
+    "actual": "HerbaceousVegetation",
+    "predicted": "PermanentCrop",
+    "confidence": 0.9772928953170776
+  },
+  {
+    "path": "HerbaceousVegetation/HerbaceousVegetation_2107.jpg",
+    "actual": "HerbaceousVegetation",
+    "predicted": "Forest",
+    "confidence": 0.9768856763839722
+  },
+  {
+    "path": "Highway/Highway_1317.jpg",
+    "actual": "Highway",
+    "predicted": "Industrial",
+    "confidence": 0.9741907119750977
+  },
+  {
+    "path": "Highway/Highway_450.jpg",
+    "actual": "Highway",
+    "predicted": "Industrial",
+    "confidence": 0.9654127955436707
+  },
+  {
+    "path": "HerbaceousVegetation/HerbaceousVegetation_727.jpg",
+    "actual": "HerbaceousVegetation",
+    "predicted": "PermanentCrop",
+    "confidence": 0.9651144742965698
+  },
+  {
+    "path": "Pasture/Pasture_414.jpg",
+    "actual": "Pasture",
+    "predicted": "Forest",
+    "confidence": 0.9643275141716003
+  },
+  {
+    "path": "HerbaceousVegetation/HerbaceousVegetation_2268.jpg",
+    "actual": "HerbaceousVegetation",
+    "predicted": "Pasture",
+    "confidence": 0.9602528810501099
+  },
+  {
+    "path": "HerbaceousVegetation/HerbaceousVegetation_295.jpg",
+    "actual": "HerbaceousVegetation",
+    "predicted": "River",
+    "confidence": 0.9564899206161499
+  },
+  {
+    "path": "Residential/Residential_1388.jpg",
+    "actual": "Residential",
+    "predicted": "Industrial",
+    "confidence": 0.9560134410858154
+  },
+  {
+    "path": "PermanentCrop/PermanentCrop_551.jpg",
+    "actual": "PermanentCrop",
+    "predicted": "AnnualCrop",
+    "confidence": 0.9512135982513428
+  },
+  {
+    "path": "PermanentCrop/PermanentCrop_226.jpg",
+    "actual": "PermanentCrop",
+    "predicted": "HerbaceousVegetation",
+    "confidence": 0.9511446356773376
+  },
+  {
+    "path": "River/River_2209.jpg",
+    "actual": "River",
+    "predicted": "HerbaceousVegetation",
+    "confidence": 0.9436897039413452
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "url": "https://zenodo.org/records/7711810/files/EuroSAT_RGB.zip?download=1",
+  "doi": "10.5281/zenodo.7711810",
+  "archive_md5": "f46e308c4d50d4bf32fedad2d3d62f3b",
+  "archive_sha256": "b4f5b234ecb7d7ff9c6cddb046543b4717c53fd6e9815be6c0e80cc614f51b90",
+  "manifest_sha256": "4c1cc4bf7d2ab439f5e16f41d83a421d6e9da56c8ea1e07600a4fe42523785fa",
+  "image_root": "extracted/EuroSAT_RGB",
+  "counts": {
+    "train": 18900,
+    "test": 4050,
+    "val": 4050
+  },
+  "classes": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "exact_duplicate_copies": 0
+}
