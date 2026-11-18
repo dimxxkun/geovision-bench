@@ -59,6 +59,7 @@ def train(
     learning_rate=0.002,
     width=24,
     limit=None,
+    augmentation=True,
 ):
     if epochs < 1 or batch_size < 1 or width < 1 or learning_rate <= 0:
         raise ValueError("epochs, batch size, width and learning rate must be positive")
@@ -85,6 +86,7 @@ def train(
         "learning_rate": learning_rate,
         "width": width,
         "limit_per_class": limit,
+        "augmentation": augmentation,
         "manifest_sha256": digest(manifest_path),
         "classes": manifest["classes"],
         "normalization": "uint8 / 255, then (x - 0.5) / 0.5",
@@ -101,7 +103,10 @@ def train(
         total_loss, total_correct, count = 0.0, 0, 0
         for images, labels in train_loader:
             optimizer.zero_grad(set_to_none=True)
-            logits = model(augment(preprocess(images), augment_generator))
+            inputs = preprocess(images)
+            if augmentation:
+                inputs = augment(inputs, augment_generator)
+            logits = model(inputs)
             loss = nn.functional.cross_entropy(logits, labels)
             if not torch.isfinite(loss):
                 raise FloatingPointError("Non-finite training loss")

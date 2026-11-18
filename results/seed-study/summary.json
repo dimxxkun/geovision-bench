@@ -1,0 +1,120 @@
+{
+  "protocol": {
+    "schema_version": 1,
+    "training_seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "arms": [
+      "augmentation",
+      "no_augmentation"
+    ],
+    "epochs": 12,
+    "threads": 4,
+    "manifest_sha256": "4c1cc4bf7d2ab439f5e16f41d83a421d6e9da56c8ea1e07600a4fe42523785fa",
+    "selection": "Lowest validation NLL within each run; calibration fits validation logits only.",
+    "comparison": "Same split, architecture, optimizer, batch size and epoch budget; only orientation augmentation changes."
+  },
+  "runs": [
+    {
+      "seed": 2026,
+      "arm": "augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9501234567901234,
+      "macro_f1": 0.9482394784467912,
+      "nll": 0.16127311437616235,
+      "ece": 0.008396250256095203
+    },
+    {
+      "seed": 2026,
+      "arm": "no_augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9471604938271605,
+      "macro_f1": 0.9454759196815129,
+      "nll": 0.16178976511961238,
+      "ece": 0.008465339873518036
+    },
+    {
+      "seed": 2027,
+      "arm": "augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9444444444444444,
+      "macro_f1": 0.9425056984440611,
+      "nll": 0.1633313462768365,
+      "ece": 0.0055386750051973545
+    },
+    {
+      "seed": 2027,
+      "arm": "no_augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9491358024691358,
+      "macro_f1": 0.9473989941650236,
+      "nll": 0.15557531701398966,
+      "ece": 0.00776746873410437
+    },
+    {
+      "seed": 2028,
+      "arm": "augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9434567901234568,
+      "macro_f1": 0.9416549851985815,
+      "nll": 0.1664308219242509,
+      "ece": 0.007997857246967065
+    },
+    {
+      "seed": 2028,
+      "arm": "no_augmentation",
+      "selected_epoch": 12,
+      "accuracy": 0.9419753086419753,
+      "macro_f1": 0.9400915118470948,
+      "nll": 0.17676051478155402,
+      "ece": 0.00681266801383507
+    }
+  ],
+  "arms": {
+    "augmentation": {
+      "accuracy": {
+        "mean": 0.9460082304526749,
+        "sample_std": 0.003597941233645146
+      },
+      "macro_f1": {
+        "mean": 0.9441333873631446,
+        "sample_std": 0.003581328838142407
+      },
+      "nll": {
+        "mean": 0.1636784275257499,
+        "sample_std": 0.0025963119675633936
+      },
+      "ece": {
+        "mean": 0.007310927502753208,
+        "sample_std": 0.001547688093173254
+      }
+    },
+    "no_augmentation": {
+      "accuracy": {
+        "mean": 0.9460905349794239,
+        "sample_std": 0.003698212664800138
+      },
+      "macro_f1": {
+        "mean": 0.9443221418978771,
+        "sample_std": 0.0037879053363592714
+      },
+      "nll": {
+        "mean": 0.16470853230505203,
+        "sample_std": 0.010890020777060205
+      },
+      "ece": {
+        "mean": 0.007681825540485825,
+        "sample_std": 0.0008296578429731595
+      }
+    }
+  },
+  "paired_accuracy_deltas": [
+    0.002962962962962945,
+    -0.004691358024691339,
+    0.001481481481481528
+  ],
+  "paired_accuracy_delta_mean": -8.230452674895528e-05,
+  "interpretation": "Descriptive seed variability on one fixed image split; not a confidence interval or spatial generalization estimate."
+}

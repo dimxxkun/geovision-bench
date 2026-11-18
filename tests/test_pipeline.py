@@ -10,6 +10,7 @@ from geovision.baseline import evaluate_baseline
 from geovision.data import extract_archive, load_split, make_manifest
 from geovision.engine import evaluate, load_model, train
 from geovision.metrics import classification_metrics, fit_temperature
+from geovision.study import summarize
 
 
 @pytest.fixture
@@ -79,17 +80,52 @@ def test_metrics_against_hand_calculated_confusion_and_calibration():
     assert calibrated["accuracy"] == result["accuracy"]
 
 
-def test_complete_train_checkpoint_evaluate_contract(dataset, tmp_path):
+def test_seed_summary_uses_paired_runs_and_sample_standard_deviation():
+    rows = []
+    for seed, arm, accuracy in [
+        (2, "no_augmentation", 0.7),
+        (1, "augmentation", 0.8),
+        (2, "augmentation", 0.9),
+        (1, "no_augmentation", 0.75),
+    ]:
+        rows.append(dict(seed=seed, arm=arm, accuracy=accuracy, macro_f1=0.5, nll=1, ece=0.1))
+    result = summarize(rows)
+    assert result["arms"]["augmentation"]["accuracy"]["mean"] == pytest.approx(0.85)
+    assert result["arms"]["augmentation"]["accuracy"]["sample_std"] == pytest.approx(0.05 * 2**0.5)
+    assert result["paired_accuracy_deltas"] == pytest.approx([0.05, 0.2])
+    assert result["paired_accuracy_delta_mean"] == pytest.approx(0.125)
+
+
+@pytest.mark.parametrize("augmentation", [True, False])
+def test_complete_train_checkpoint_evaluate_contract(dataset, tmp_path, augmentation):
     manifest = tmp_path / "manifest.json"
     make_manifest(dataset, manifest, classes=["crop", "water"])
     run = tmp_path / "run"
-    history = train(dataset, manifest, run, epochs=2, batch_size=16, width=4, threads=1)
+    history = train(
+        dataset,
+        manifest,
+        run,
+        epochs=2,
+        batch_size=16,
+        width=4,
+        threads=1,
+        augmentation=augmentation,
+    )
     model, saved = load_model(run / "best.pt")
     assert not model.training
     assert saved["epoch"] in (1, 2)
     assert len(history) == 2
     repeated = tmp_path / "repeat"
-    repeat_history = train(dataset, manifest, repeated, epochs=2, batch_size=16, width=4, threads=1)
+    repeat_history = train(
+        dataset,
+        manifest,
+        repeated,
+        epochs=2,
+        batch_size=16,
+        width=4,
+        threads=1,
+        augmentation=augmentation,
+    )
     _, repeat_saved = load_model(repeated / "best.pt")
     for key, tensor in saved["state_dict"].items():
         torch.testing.assert_close(tensor, repeat_saved["state_dict"][key], rtol=0, atol=0)

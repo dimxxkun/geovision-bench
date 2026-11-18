@@ -60,17 +60,19 @@ weights are not checked into Git.
 
 ## Known limitations
 
-- Single seed, single image split, CPU-only local validation; no geographic transfer study.
+- Original single-run report plus a three-seed, two-arm follow-up on the same image split;
+  CPU-only local validation, with no geographic transfer study.
 - RGB discards the multispectral information available in the original 13-band product.
 - One label per patch hides mixed land use and does not produce segmentation masks.
 - No cloud mask, out-of-distribution rejection, uncertainty interval, or abstention policy.
 - Not validated for safety-critical, defence, regulatory, cadastral or property decisions.
-- The test split is used once for the declared CNN evaluation and fixed baseline report;
-  further model development should use validation data and a fresh final holdout.
+- The test split appeared in the original CNN/baseline report and is reused in the
+  declared six-run [seed and augmentation study](seed-study.md). It is not a fresh final
+  holdout. Further model development should use validation data and a new final holdout.
 
 ## Sensible next experiments
 
-Recover acquisition/scene metadata to establish spatially disjoint evaluation; report
-multiple seeds and bootstrap intervals; compare with a pretrained backbone under an
+Recover acquisition/scene metadata to establish spatially disjoint evaluation; quantify
+uncertainty beyond the completed three-seed comparison; compare with a pretrained backbone under an
 equal compute budget; evaluate multispectral inputs and geographic domain shift.
 These are proposed experiments, not completed results.

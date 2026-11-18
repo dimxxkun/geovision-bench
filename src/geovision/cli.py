@@ -32,6 +32,7 @@ def main():
     training.add_argument("--learning-rate", type=float, default=0.002)
     training.add_argument("--width", type=int, default=24)
     training.add_argument("--limit", type=int, help="Smoke only: max images per class per split")
+    training.add_argument("--no-augmentation", dest="augmentation", action="store_false")
     evaluation.add_argument("--checkpoint", type=Path, required=True)
     baseline = commands.add_parser(
         "baseline", help="Fit and evaluate a fixed colour-statistics baseline"
@@ -40,6 +41,13 @@ def main():
     baseline.add_argument("--manifest", type=Path, required=True)
     baseline.add_argument("--output", type=Path, required=True)
     baseline.add_argument("--threads", type=int, default=4)
+    study = commands.add_parser("study", help="Paired multi-seed augmentation comparison")
+    study.add_argument("--root", type=Path, required=True)
+    study.add_argument("--manifest", type=Path, required=True)
+    study.add_argument("--output", type=Path, required=True)
+    study.add_argument("--seeds", type=int, nargs="+", default=[2026, 2027, 2028])
+    study.add_argument("--epochs", type=int, default=12)
+    study.add_argument("--threads", type=int, default=4)
     prediction = commands.add_parser("predict")
     prediction.add_argument("--checkpoint", type=Path, required=True)
     prediction.add_argument("--image", type=Path, required=True)
@@ -52,6 +60,10 @@ def main():
     elif command in ("train", "evaluate"):
         args["manifest_path"] = args.pop("manifest")
         (train if command == "train" else evaluate)(**args)
+    elif command == "study":
+        from .study import run_study
+
+        run_study(**args)
     elif command == "baseline":
         from .baseline import evaluate_baseline
         from .data import write_json

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "training_seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "arms": [
+    "augmentation",
+    "no_augmentation"
+  ],
+  "epochs": 12,
+  "threads": 4,
+  "manifest_sha256": "4c1cc4bf7d2ab439f5e16f41d83a421d6e9da56c8ea1e07600a4fe42523785fa",
+  "selection": "Lowest validation NLL within each run; calibration fits validation logits only.",
+  "comparison": "Same split, architecture, optimizer, batch size and epoch budget; only orientation augmentation changes."
+}
