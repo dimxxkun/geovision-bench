@@ -161,4 +161,10 @@ experiment; the code, tests and reports are available for inspection.
 EuroSAT: Patrick Helber, Benjamin Bischke, Andreas Dengel and Damian Borth.
 [Official project](https://github.com/phelber/EuroSAT) ·
 [Dataset v2, DOI 10.5281/zenodo.7711810](https://zenodo.org/records/7711810).
-Code is MIT licensed. Dataset/source-imagery terms remain with their respective owners.
+Code uses the Noncommercial Use and Commercial Permission License; commercial use requires a separate written agreement and an agreed fee. Dataset/source-imagery terms remain with their respective owners.
+
+## License and commercial use
+
+Original material in this repository is available under the [Noncommercial Use and Commercial Permission License](LICENSE). **Noncommercial use is free. Commercial use requires prior written permission and a separate written agreement specifying the scope and agreed fee.** Contact [work.abdulfatai@gmail.com](mailto:work.abdulfatai@gmail.com) with the repository name and intended use.
+
+Portfolio review and recruitment evaluation are permitted without a fee. Third-party components retain their own licenses. Permissions already granted for earlier versions remain valid; the new terms do not revoke those grants. These are custom source-available terms, not an OSI-approved open-source license.
